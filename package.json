@@ -1,15 +1,16 @@
 {
-  "name": "first-graphql",
+  "name": "firstgraphql",
   "version": "1.0.0",
   "description": "first graphql",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "babel": "^6.23.0",
+    "babel": "^5.8.23",
     "express": "^4.15.2",
     "express-graphql": "^0.6.4",
     "graphql": "^0.9.6"
