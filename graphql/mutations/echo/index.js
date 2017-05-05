@@ -12,7 +12,7 @@ export default  {
             name: 'number'
         }
     },
-    async resolve(roor, params) {
+    resolve(roor, params) {
         return `Mutation ${params.name} - ${params.number}`;
     }
 }

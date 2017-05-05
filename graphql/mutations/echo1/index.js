@@ -24,7 +24,7 @@ export default  {
             name: 'number'
         }
     },
-    async resolve(root, params) {
+    resolve(root, params) {
         return {
             name: params.name.toUpperCase(),
             number: params.number * 10
