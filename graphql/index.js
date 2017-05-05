@@ -1,9 +1,12 @@
-import { GraphQLSchema } from 'graphql';
+import { GraphQLSchema, GraphQLObjectType } from 'graphql';
 
-import query from './query';
+import queries from './query';
 
 const schema = new GraphQLSchema({
-    query: query
+    query: new GraphQLObjectType({
+        name: 'RootQuery',
+        fields: queries
+    })
 });
 
 export default schema;

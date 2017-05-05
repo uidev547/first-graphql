@@ -1,12 +1,11 @@
 import { GraphQLObjectType } from 'graphql';
 import echo from './echo';
+import echo1 from './echo1';
 
-const query =  new GraphQLObjectType({
-    name: 'RootQuery',
-    fields: {
-        echo
-    }
-});
 
-export default query;
+export default  {
+    echo,
+    echo1
+};
+
 
