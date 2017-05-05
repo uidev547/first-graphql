@@ -1,8 +1,8 @@
 import { GraphQLString, GraphQLInt } from 'graphql';
 
-export default  {
-    type: GraphQLString,
-    args: {
+export default {
+    name: 'Echo1Type',
+    fields: {
         name: {
             type: GraphQLString,
             name: 'name'
@@ -10,10 +10,10 @@ export default  {
         number: {
             type: GraphQLInt,
             name: 'number'
+        },
+        date: {
+            type: GraphQLString,
+            name: 'date'
         }
-    },
-    resolve(roor, params) {
-        return `Mutation ${params.name} - ${params.number}`;
     }
 };
-
