@@ -1,11 +1,11 @@
 import { GraphQLString, GraphQLObjectType } from 'graphql';
-import UserType from '../../types/UserType';
+import UserType, { UserTypeDef } from '../../types/UserType';
 import User from '../../../models/User';
 
 const args = {
-    firstName: UserType.fields.firstName,
-    lastName: UserType.fields.lastName,
-    userId: UserType.fields.userId,
+    firstName: UserTypeDef.fields.firstName,
+    lastName: UserTypeDef.fields.lastName,
+    userId: UserTypeDef.fields.userId,
     password: {
         type: GraphQLString,
         name: 'password'
@@ -13,7 +13,7 @@ const args = {
 };
 
 export default  {
-    type: new GraphQLObjectType(UserType),
+    type: UserType,
     args: args,
     async resolve(roor, params) {
         console.log('params', params);

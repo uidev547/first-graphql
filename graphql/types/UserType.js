@@ -1,6 +1,6 @@
-import { GraphQLString } from 'graphql';
+import { GraphQLObjectType, GraphQLString } from 'graphql';
 
-export default {
+export const UserTypeDef = {
     name: 'UserType',
     fields: {
         _id: {
@@ -21,3 +21,5 @@ export default {
         }
     }
 };
+const UserType = new GraphQLObjectType(UserTypeDef);
+export default UserType;
