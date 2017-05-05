@@ -16,7 +16,6 @@ export default  {
     type: UserType,
     args: args,
     async resolve(roor, params) {
-        console.log('params', params);
         const newUser = await User.create(params);
         return newUser;
     }

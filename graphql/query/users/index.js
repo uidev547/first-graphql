@@ -11,8 +11,10 @@ export default {
             type: GraphQLString
         }
     },
-    async resolve(root, params) {
-        const users = await User.find({});
-        return users;
+    resolve(root, params) {
+        // Promised way of resolve method
+        return User
+        .find({})
+        .exec()
     }
 }
