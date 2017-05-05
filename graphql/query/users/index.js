@@ -1,7 +1,7 @@
 import { GraphQLObjectType, GraphQLString, GraphQLList } from 'graphql';
 import UserType from '../../types/UserType';
 import User from '../../../models/User';
-
+import mongoProjection from '../../../utils/mongo-projection';
 
 export default {
     type:  new GraphQLList(UserType),
@@ -11,10 +11,13 @@ export default {
             type: GraphQLString
         }
     },
-    resolve(root, params) {
-        // Promised way of resolve method
+    resolve(root, params, context, info) {
+        console.log('context', context);
+        const projection = mongoProjection(info);
+        console.log('projection', projection);
         return User
         .find({})
+        .select(projection)
         .exec()
     }
 }
