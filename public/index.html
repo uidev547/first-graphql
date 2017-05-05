@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Index page</title>
+    </head>
+    <body>
+        <h1>Hii</h1>
+    </body>
+    <<script>
+        var request = function request(obj) {
+            return fetch(obj.url, {
+                body: JSON.stringify(obj.data),
+                method: obj.method,
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(res => res.json());
+        }
+
+        request({
+            url: '/graphql',
+            method: 'post',
+            data: {
+                query: '{users {firstName, lastName}}'
+            }
+        })
+        .then(res => {
+            console.log(res);
+        });
+    </script>
+</html>

@@ -4,6 +4,7 @@ import schema from './graphql';
 import mongoose from 'mongoose';
 
 const app = express();
+app.use(express.static('public'));
 app.use('/graphql', graphqlHTTP(() => {
     return {
         schema,
